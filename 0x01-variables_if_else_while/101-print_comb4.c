@@ -1,37 +1,31 @@
 #include <stdio.h>
 /**
- *
  *main - entry point
- *
- *Return: alway returns 0
- *
+ *Return: Always 0 (Success)
  */
+
 int main(void)
 {
-	int i;
-	int j;
-	int k;
+	int one, ten, hundred;
 
-	for (i = 0; i <= 9; i++)
+	for (hundred = '0'; hundred <= '9'; hundred++) /*hundreds place*/
 	{
-		for (j = 0; j <= 9; j++)
+		for (ten = (hundred + 1); ten <= '9'; ten++) /*tens=100s+1*/
 		{
-			for (k = 0; k <= 9; k++)
+			for (one = (ten + 1); one <= '9'; one++) /*ones*/
 			{
-				if (k > j && j > i)
+				putchar(hundred);
+				putchar(ten);
+				putchar(one);
+				if (hundred != '7' || ten != '8' || one != '9')
 				{
-					putchar(i + '0');
-					putchar(j + '0');
-					putchar(k + '0');
-					if (i != 7 || j != 8 || k != 9)
-					{
-						putchar(',');
-						putchar(' ');
-					}
+					putchar(',');
+					putchar(' ');
 				}
 			}
 		}
 	}
 	putchar('\n');
-	return (0)
+
+	return (0);
 }
