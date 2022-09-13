@@ -1,6 +1,6 @@
-#ifndef _ALX_
+#ifndef _MAIN_H_
 
-#define _ALX_
+#define _MAIN_H_
 
 /**
  *_putchar - writes the character c to stdout
