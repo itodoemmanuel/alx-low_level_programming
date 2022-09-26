@@ -3,8 +3,8 @@
 /**
  * _strspn - Locates a character in a string
  * @s: This is the main C string to be scanned.
- * @accept: This is the string containing the list of characters to match in s
- * Return: return count
+ * @accept: pointer to the substring we check for
+ * Return: unsigned int, length of a prefix substring
  */
 
 unsigned int _strspn(char *s, char *accept)
@@ -17,7 +17,7 @@ unsigned int _strspn(char *s, char *accept)
 	str2 = accept;
 
 	i = 0;
-	while (str1[i] != '\0') /*Declaring WHILE *s */
+	while (str1[i] != '\0')
 	{
 		j = 0
 		while (str2[j] != '\0')
