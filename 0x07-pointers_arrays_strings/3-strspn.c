@@ -9,31 +9,21 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	int i, j;
-	int count = 0;
-	char *str1, *str2;
+	unsigned int count = 0;
+	char *ptr_accept = accept;
 
-	str1 = s;
-	str2 = accept;
-
-	i = 0;
-	while (str1[i] != '\0')
+	while (*s++)
 	{
-		j = 0
-		while (str2[j] != '\0')
-		{
-			if (str2[j] == str1[i])
+		while (*accept++)
+			if (*(s - 1) == *(accept - 1))
 			{
-			       	count++
+				count++;
 				break;
 			}
-			j++
-		}
-		if (s[i] != accept[j])
-		{
+		if (!(*--accept))
 			break;
-		}
-		i++;
+		accept = ptr_accept;
 	}
+
 	return (count);
 }
