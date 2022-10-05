@@ -4,28 +4,25 @@
 /**
  * count_word - helper function to count the number of words in a string
  * @s: string to evaluate
- *
  * Return: number of words
  */
 
-int count_word(char *s)
+int wrdcnt(char *s)
 {
-	int flag, c, w;
+	int i, n = 0;
 
-	flag = 0;
-	w = 0;
-
-	for (c = 0; s[c] != '\0'; c++)
+	for (i = 0; s[i]; i++)
 	{
-		if (s[c] == ' ')
-			flag = 0;
-		else if (flag == 0)
+		if (s[i] == ' ')
 		{
-			flag = 1;
-			w++;
+			if (s[i + 1] != ' ' && s[i + 1] != '\0')
+				n++;
 		}
+		else if (i == 0)
+			n++;
 	}
-	return (w);
+	n++;
+	return (n);
 }
 /*
  * **strtow - splits a string into words
